@@ -1,4 +1,4 @@
-module hight_derivative_products
+module height_derivative_products
 
     use params         , only : kp
     use namelist       , only : dt=>INPUT_TDEF_DT
@@ -71,5 +71,5 @@ module hight_derivative_products
     end subroutine z_tderiv
 
 
-end module hight_derivative_products
+end module height_derivative_products
 

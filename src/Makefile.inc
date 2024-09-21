@@ -26,7 +26,7 @@ OBJS = NaNchecker.o                 \
        EPflux.o                     \
        EPflux_divergence.o          \
        Gflux.o                      \
-       hight_derivative_products.o  \
+       height_derivative_products.o \
        energy_az.o                  \
        energy_ae.o                  \
        energy_pz.o                  \

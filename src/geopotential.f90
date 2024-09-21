@@ -168,7 +168,7 @@ module geopotential
     ! Note
     !   -phi_dagger and z_zm is different:
     !      phi_dagger is obtained from temperature in the zonal mean state.
-    !      z_zm is obtained directly from input geopotential data (i.e. z_zm is the zonal mean hight).
+    !      z_zm is obtained directly from input geopotential data (i.e. z_zm is the zonal mean height).
     !
     subroutine geopotential_zonal_mean_state()
         real(kp) :: alt_zm(jm)

@@ -870,7 +870,7 @@ module io_main
         call zonal_file%fwrite( tt, 'kz_zm'            , kz_zm )
         call zonal_file%fwrite( tt, 'ke_zm'            , ke_zm )
         call zonal_file%fwrite( tt, 'pz_zm'            , pz_zm )
-        call zonal_file%fwrite( tt, 'az_zm'            , az_zm )
+        !call zonal_file%fwrite( tt, 'az_zm'            , az_zm )
         call zonal_file%fwrite( tt, 'ae_total_zm'      , ae_total_zm )
 
         call zonal_file%fwrite( tt, 'dkzdt_vkz'        , dkzdt_vkz )

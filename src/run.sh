@@ -11,10 +11,10 @@ cd /mnt/jet11/kosei/mim/mim_modern/src/
 ulimit -s unlimited
 
 NOW=$(date "+%Y%m%d_%H%M%S")
-DATA="JRA3Q"
-INI=2000
-FIN=2000
-FLAG=''
+DATA="JRA55"
+INI=1990
+FIN=2020
+FLAG=""
 RESULT="../output/${DATA}/result_${INI}_${FIN}_${NOW}${FLAG}.txt"
 
 #NAMELIST="../nml/input_JRA55_2000_2000.nml"
