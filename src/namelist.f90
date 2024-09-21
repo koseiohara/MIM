@@ -36,6 +36,7 @@ module namelist
     character(32) :: INPUT_UNIT_TOPO
     character(32) :: INPUT_UNIT_Q
     
+    real(rkp), parameter :: undef_init = 9.999E+20_rkp
     real(rkp) :: INPUT_UNDEF_DEFAULT  ! below derivatives
     real(rkp) :: INPUT_UNDEF_UVT
     real(rkp) :: INPUT_UNDEF_U
@@ -237,7 +238,7 @@ module namelist
         INPUT_UNIT_TOPO = 'm'
         INPUT_UNIT_Q    = 'K/s'
     
-        INPUT_UNDEF_DEFAULT   = 9.999E+20_rkp
+        INPUT_UNDEF_DEFAULT   = undef_init
         INPUT_UNDEF_UVT       = INPUT_UNDEF_DEFAULT 
         INPUT_UNDEF_U         = INPUT_UNDEF_DEFAULT 
         INPUT_UNDEF_V         = INPUT_UNDEF_DEFAULT 
@@ -310,8 +311,38 @@ module namelist
         read(nml_input, nml=OUTPUT_ZDEF )
         read(nml_input, nml=WAVE        )
     
+        call undef(INPUT_UNDEF_UVT      , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_UVT      , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_U        , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_V        , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_T        , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_PS       , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_MSL      , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_Z        , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_OMEGA    , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_Q        , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_SHORTWAVE, &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_LONGWAVE , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_LHR_LARGE, &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_LHR_CONV , &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
+        call undef(INPUT_UNDEF_DIFFUSION, &  !! INOUT
+                 & INPUT_UNDEF_DEFAULT    )  !! IN 
 
-        if ( trim(INPUT_ENDIAN_DEFAULT) /= ''              .AND. &
+        if ( trim(INPUT_ENDIAN_DEFAULT) /= 'native'        .AND. &
            & trim(INPUT_ENDIAN_DEFAULT) /= 'little_endian' .AND. &
            & trim(INPUT_ENDIAN_DEFAULT) /= 'big_endian'          ) then
             write(0,'(A)') 'ERROR STOP'
@@ -380,14 +411,25 @@ module namelist
       character(*), intent(in)    :: endian_default
   
       if (trim(endian_out) == '') then
-         endian_out = endian_default
+          endian_out = endian_default
       else if (trim(endian_out) /= 'big_endian' .AND. endian_out /= 'little_endian') then
-         write(0,'(A)') 'ERROR STOP'
-         write(0,'(A)') 'Unexpected endian name : ' // trim(endian_out)
-         ERROR STOP
+          write(0,'(A)') 'ERROR STOP'
+          write(0,'(A)') 'Unexpected endian name : ' // trim(endian_out)
+          ERROR STOP
       endif
   
     end subroutine endian
+
+
+    subroutine undef(undef_out, undef_default)
+        real(rkp), intent(inout) :: undef_out
+        real(rkp), intent(in)    :: undef_default
+
+        if (undef_out == undef_init .AND. undef_default /= undef_init) then
+            undef_out = undef_default
+        endif
+
+    end subroutine undef
   
   
     !
