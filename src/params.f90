@@ -8,8 +8,8 @@ module params
   
     integer, parameter :: rkp = 4  ! Kind parameter for the input files
     integer, parameter :: wkp = 4  ! Kind parameter for the output files
-    integer, parameter :: kp  = 4  ! Kind parameter for computation
-    integer, parameter :: ckp = 4   ! Kind parameter for fft
+    integer, parameter :: kp  = 16  ! Kind parameter for computation
+    integer, parameter :: ckp = 16   ! Kind parameter for fft
   
     integer, parameter :: FILENAME_MAX = 256
 

@@ -104,7 +104,7 @@ module namelist
     character(FILENAME_MAX) :: OUTPUT_VINT_FILENAME
     character(FILENAME_MAX) :: OUTPUT_GMEAN_FILENAME
     character(FILENAME_MAX) :: OUTPUT_WAVE_FILENAME
-    character(FILENAME_MAX) :: OUTPUT_ERROR_FILENAME
+    !character(FILENAME_MAX) :: OUTPUT_ERROR_FILENAME
     character(FILENAME_MAX) :: OUTPUT_WARN_FILENAME
 
     logical :: Q_EXIST
@@ -207,8 +207,8 @@ module namelist
                           & OUTPUT_VINT_FILENAME , &
                           & OUTPUT_GMEAN_FILENAME, &
                           & OUTPUT_WAVE_FILENAME , &
-                          & OUTPUT_ERROR_FILENAME, &
                           & OUTPUT_WARN_FILENAME
+                          !& OUTPUT_ERROR_FILENAME, &
     
         namelist / OUTPUT_ZDEF / OUTPUT_ZDEF_NUM  , &
                                & OUTPUT_ZDEF_LEVEL
@@ -295,7 +295,7 @@ module namelist
         OUTPUT_VINT_FILENAME  = ''
         OUTPUT_GMEAN_FILENAME = ''
         OUTPUT_WAVE_FILENAME  = ''
-        OUTPUT_ERROR_FILENAME = ''
+        !OUTPUT_ERROR_FILENAME = ''
         OUTPUT_WARN_FILENAME  = ''
     
     
@@ -626,11 +626,11 @@ module namelist
             endif
         endif
 
-        if (trim(OUTPUT_ERROR_FILENAME) == '') then
-            write(0,'(A)') 'ERROR STOP'
-            write(0,'(A)') 'OUTPUT_ERROR_FILENAME is not specified'
-            ERROR STOP
-        endif
+        !if (trim(OUTPUT_ERROR_FILENAME) == '') then
+        !    write(0,'(A)') 'ERROR STOP'
+        !    write(0,'(A)') 'OUTPUT_ERROR_FILENAME is not specified'
+        !    ERROR STOP
+        !endif
 
         if (trim(OUTPUT_WARN_FILENAME) == '') then
             write(0,'(A)') 'ERROR STOP'

@@ -20,8 +20,8 @@ module io_main
                             & INPUT_ZDEF_ZREV                                                                            , &
                             & WAVE_MAX_NUMBER                                                                            , &
                             & OUTPUT_ZONAL_FILENAME, OUTPUT_VINT_FILENAME, OUTPUT_GMEAN_FILENAME, OUTPUT_WAVE_FILENAME   , &
-                            & OUTPUT_ERROR_FILENAME                                                                      , &
                             & Q_EXIST, Q_COMPS_EXIST
+                            !& OUTPUT_ERROR_FILENAME                                                                      , &
     use com_var      , only : im, jm, km, ko, wmax
     use mim_var      , only : u, v, t, z, omega, p_sfc, alt                                                              , &
                             & u_zm, v_zm, pt_zm, t_dagger, st_zm, w_zm, z_zm, u_u_x_zm, epy, depy, epz_form, depz_form   , &
