@@ -13,7 +13,7 @@ module energy_ae
     public :: get_ae
 
 
-    real(kp), parameter :: coeff = cp / (1.E+5_kp**rkappa * (1._kp+rkappa))
+    real(kp), parameter :: coeff = cp / (1.E+5_kp**rkappa * (1._kp+rkappa)*grav)
 
 
     contains
@@ -70,7 +70,7 @@ module energy_ae
 
         ! Note: even if Taylor expansion is used, results are similar to the below
         p_kappa_p1_zm(1:jm,1:ko) = sum((p_pd(1:im,1:jm,1:ko)*100._kp)**(1._kp+rkappa), dim=1) / real(im, kind=kp)
-        p_diff(1:jm,1:ko) = coeff * (p_kappa_p1_zm(1:jm,1:ko) - p_zm(1:jm,1:ko)**(1._kp+rkappa))
+        p_diff(1:jm,1:ko) = coeff * (p_kappa_p1_zm(1:jm,1:ko) - (p_zm(1:jm,1:ko)*100._kp)**(1._kp+rkappa))
 
         ! integrate with pt
         call integral_pt(jm               , &  !! IN
