@@ -30,7 +30,7 @@ FC=ifort
 ifeq (${FC}, ifort)
 	OPTION=-warn all -O1 -assume byterecl -convert little_endian -traceback 
 else
-	OPTION=-O1 -Wall -fbacktrace -fcheck=all -fconvert=little-endian
+	OPTION=-O1 -Wall -fbacktrace -fconvert=little-endian
 endif
 
 

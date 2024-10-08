@@ -365,7 +365,7 @@ module mim
             endif
         enddo
 
-        write(digit_char,'(I0)') digit+1
+        write(digit_char,'(I0)') digit
 
         log_format = '(2(A,I' // trim(digit_char) // '))'
 
