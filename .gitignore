@@ -1,0 +1,11 @@
+*.o
+*.mod
+*.dat
+*.bin
+*.grd
+MIM
+*.swp
+debug/
+*.txt
+run.sh
+
