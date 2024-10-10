@@ -13,49 +13,49 @@ This program is based on [MIM v0.35](https://github.com/mim-proj/mim)
       File name of the u (zonal wind [$`\mathrm{m\:s^{-1}}`$]), v (meridional wind [$`\mathrm{m\:s^{-1}}`$]), and t (temperature [$`\mathrm{K}`$]) on the pressure surfaces. Their order must be u &rarr; v &rarr; t.
     - INPUT\_U\_FILENAME  
       Optional  
-      File name of the zonal wind [$`\mathrm{m\:s^{-1}}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA3-3Q, anl_p125_ugrd.
+      File name of the zonal wind [$`\mathrm{m\:s^{-1}}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA-3Q, anl_p125_ugrd.
     - INPUT\_V\_FILENAME  
       Optional  
-      File name of the meridional wind [$`\mathrm{m\:s^{-1}}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA3-3Q, anl_p125_vgrd.
+      File name of the meridional wind [$`\mathrm{m\:s^{-1}}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA-3Q, anl_p125_vgrd.
     - INPUT\_T\_FILENAME  
       Optional  
-      File name of the temperature [$`\mathrm{K}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA3-3Q, anl_p125_tmp.
+      File name of the temperature [$`\mathrm{K}`$] on the pressure surfaces. This file is needed if INPUT\_UVT\_FILENAME is not specified. If the data is from JRA-3Q, anl_p125_tmp.
     - INPUT\_PS\_FILENAME  
       Optional  
-      File name of the surface pressure [$`\mathrm{Pa}`$] / [$`\mathrm{hPa}`$]. If the data is from JRA3-3Q, anl_surf125-PRES.
+      File name of the surface pressure [$`\mathrm{Pa}`$] / [$`\mathrm{hPa}`$]. If the data is from JRA-3Q, anl_surf125-PRES.
     - INPUT\_MSL\_FILENAME  
       Optional  
-      File name of the mean sea level pressure [$`\mathrm{Pa}`$] / [$`\mathrm{hPa}`$]. This file is needed if INPUT\_PS\_FILENAME is not specified. If the data is from JRA3-3Q, anl_surf125-PRMSL.
+      File name of the mean sea level pressure [$`\mathrm{Pa}`$] / [$`\mathrm{hPa}`$]. This file is needed if INPUT\_PS\_FILENAME is not specified. If the data is from JRA-3Q, anl_surf125-PRMSL.
     - INPUT\_TS\_FILENAME  
       Optional  
-      File name of the surface temperature [$`\mathrm{K}`$]. This file is needed if INPUT\_PS\_FILENAME is not specified. If the data is from JRA3-3Q, anl_surf125-TMP.
+      File name of the surface temperature [$`\mathrm{K}`$]. This file is needed if INPUT\_PS\_FILENAME is not specified. If the data is from JRA-3Q, anl_surf125-TMP.
     - INPUT\_Z\_FILENAME  
       Required  
-      File name of the height [$`\mathrm{m}`$] or geopotential height [$`\mathrm{m^2\:s^{-2}}`$] on the pressure surfaces. If the data is from JRA3-3Q, anl_p125_hgt.
+      File name of the height [$`\mathrm{m}`$] or geopotential height [$`\mathrm{m^2\:s^{-2}}`$] on the pressure surfaces. If the data is from JRA-3Q, anl_p125_hgt.
     - INPUT\_OMEGA\_FILENAME  
       Optional  
-      File name of the vertical velocity [$`\mathrm{Pa \: s^{-1}}`$]. If not specified, omega will be estimated from the continuity equation. If the data is from JRA3-3Q, anl_p125_vvel.
+      File name of the vertical velocity [$`\mathrm{Pa \: s^{-1}}`$]. If not specified, omega will be estimated from the continuity equation. If the data is from JRA-3Q, anl_p125_vvel.
     - INPUT\_TOPO\_FILENAME  
       Required  
-      File name of the topography [$`\mathrm{m}`$] / [$`\mathrm{m^2 \: s^{-1}}`$]. If the data is from JRA3-3Q, LL125_surf.
+      File name of the topography [$`\mathrm{m}`$] / [$`\mathrm{m^2 \: s^{-1}}`$]. If the data is from JRA-3Q, LL125_surf.
     - INPUT\_Q\_FILENAME  
       Optional  
       File name of the total diabatic heating [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, total diabatic heating is defied by the sum of diabatic heating by the short wave, long wave, large scale condensation, convective heating, and vertical diffusion. If one of them is not specified too, the diabatic heating will be estimated from the time derivative of the potential temperature.
     - INPUT\_SHORTWAVE\_FILENAME  
       Optional  
-      File name of the diabatic heating by the short wave radiation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the short wave radiation will be zero. If the data is from JRA3-3Q, fcst_phyp125_ttswr.
+      File name of the diabatic heating by the short wave radiation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the short wave radiation will be zero. If the data is from JRA-3Q, fcst_phyp125_ttswr.
     - INPUT\_LONGWAVE\_FILENAME  
       Optional  
-      File name of the diabatic heating by the long wave radiation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the long wave radiation will be zero. If the data is from JRA3-3Q, fcst_phyp125_ttlwr.
+      File name of the diabatic heating by the long wave radiation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the long wave radiation will be zero. If the data is from JRA-3Q, fcst_phyp125_ttlwr.
     - INPUT\_LHR\_LARGE\_FILENAME  
       Optional  
-      File name of the diabatic heating by the large scale condensation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the large scale condensation will be zero. If the data is from JRA3-3Q, fcst_phyp125_lrghr.
+      File name of the diabatic heating by the large scale condensation [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the large scale condensation will be zero. If the data is from JRA-3Q, fcst_phyp125_lrghr.
     - INPUT\_LHR\_CONV\_FILENAME  
       Optional  
-      File name of the diabatic heating by the convective heating [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the convective heating will be zero. If the data is from JRA3-3Q, fcst_phyp125_cnvhr.
+      File name of the diabatic heating by the convective heating [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the convective heating will be zero. If the data is from JRA-3Q, fcst_phyp125_cnvhr.
     - INPUT\_DIFFUSION\_FILENAME  
       Optional  
-      File name of the diabatic heating by the vertical diffusion [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the vertical diffusion will be zero. If the data is from JRA3-3Q, fcst_phyp125_vdfhr.
+      File name of the diabatic heating by the vertical diffusion [$`\mathrm{K \: s^{-1}}`$] / [$`\mathrm{K \: day^{-1}}`$]. If not specified, outputs related to the vertical diffusion will be zero. If the data is from JRA-3Q, fcst_phyp125_vdfhr.
 
 - INPUT\_UNIT
     - INPUT\_UNIT\_Z  
